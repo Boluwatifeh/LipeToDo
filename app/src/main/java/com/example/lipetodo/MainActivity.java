@@ -38,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (resultCode == Intent_Constants.INTENT_REQUEST_CODE){
+            assert data != null;
             messageText = data.getStringExtra(Intent_Constants.INTENT_MESSAGE_FIELD);
             arrayList.add(messageText);
             arrayAdapter.notifyDataSetChanged();
